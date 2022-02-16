@@ -1,0 +1,27 @@
+﻿@model CreateRoleDto
+
+@{
+    ViewBag.Title = "Create new role";
+}
+
+<h1>Role Creation form</h1>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="RoleName"></label>
+                    <input asp-for="RoleName" class="form-control" />
+                    <span asp-validation-for="RoleName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label></label>
+                    <input class="btn btn-primary" type="submit" value="Create role" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

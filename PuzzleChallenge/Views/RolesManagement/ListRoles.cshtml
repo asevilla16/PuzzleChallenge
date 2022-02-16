@@ -1,0 +1,49 @@
+﻿@model List<IdentityRole>
+
+@{
+    ViewBag.Title = "All Roles";
+}
+
+
+@if (Model.Any())
+{
+    <h1>Roles registered</h1>
+
+    <a class="btn btn-primary mb-3" asp-controller="RolesManagement" asp-action="Create">Add new Role</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Role Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rol in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => rol.Name)</td>
+                    <td>
+                        <form method="post" asp-action="DeleteRole" asp-controller="RolesManagement" asp-route-id="@rol.Id">
+                            <a class="btn btn-primary" asp-action="Edit" asp-controller="RolesManagement" asp-route-id="@rol.Id">Edit</a>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Deleting role: @rol.Name. Agree?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            No roles created
+        </div>
+        <div class="card-body">
+            <a class="btn btn-primary" asp-controller="RolesManagement" asp-action="Create">
+                Create role
+            </a>
+        </div>
+    </div>
+}

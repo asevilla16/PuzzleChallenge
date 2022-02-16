@@ -1,0 +1,35 @@
+﻿@model List<UserModel>
+
+@{ 
+        ViewData["Title"] = "Users view";
+}
+
+<h1>Users registered</h1>
+
+<a class="btn btn-primary mb-3" asp-controller="Account" asp-action="Register">Add new User</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(m => user.Email)</td>
+            <td>@Html.DisplayFor(m => user.PhoneNumber)</td>
+            <td>
+                <form method="post" asp-action="DeleteUser" asp-controller="Users" asp-route-id="@user.Id">
+                    <a class="btn btn-primary" asp-action="Details" asp-controller="Users" asp-route-id="@user.Id">View Details</a>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Deleting user: @user.Email. Agree?')">Delete</button>
+                </form>
+            </td>
+        </tr>
+           
+        }
+    </tbody>
+</table>

@@ -1,0 +1,39 @@
+﻿@model List<UserRoleDto>
+
+@{ 
+    var userId = ViewBag.userId;
+}
+
+<form method="post">
+    <div class="card">
+        <div class="card-header">
+            Manage roles for the user @userId
+        </div>
+        <div class="card-body">
+            @*@foreach(var rol in Model)
+        {
+        <div class="form-check m-1">
+            <input type="hidden" asp-for="@rol.Name" />
+            <input asp-for="@rol.IsChecked" class="form-check-input" />
+            <label class="form-check-label">@rol.Name</label>
+        </div>
+        }*@
+
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <div class="form-check m-1">
+                    <input type="hidden" asp-for="@Model[i].Id" />
+                    <input type="hidden" asp-for="@Model[i].Name" />
+                    <input asp-for="@Model[i].IsChecked" class="form-check-input" />
+                    <label class="form-check-label" asp-for="@Model[i].IsChecked">
+                        @Model[i].Name
+                    </label>
+                </div>
+            }
+        </div>
+        <div class="card-footer">
+            <input type="submit" value="Update" class="btn btn-primary"/>
+            <a asp-action="Details" asp-route-id="@userId" class="btn btn-warning">Cancel</a>
+        </div>
+    </div>
+</form>
