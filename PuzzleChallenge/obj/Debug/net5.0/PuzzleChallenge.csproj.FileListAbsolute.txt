@@ -101,3 +101,5 @@ C:\Users\Angel\source\repos\PuzzleChallenge\PuzzleChallenge\obj\Debug\net5.0\Raz
 C:\Users\Angel\source\repos\PuzzleChallenge\PuzzleChallenge\obj\Debug\net5.0\Razor\Views\Users\EditRolesInUser.cshtml.g.cs
 C:\Users\Angel\source\repos\PuzzleChallenge\PuzzleChallenge\obj\Debug\net5.0\Razor\Views\Account\AccessDenied.cshtml.g.cs
 C:\Users\Angel\source\repos\PuzzleChallenge\PuzzleChallenge\obj\Debug\net5.0\Razor\Views\Home\AuthWelcome.cshtml.g.cs
+C:\Users\Angel\source\repos\PuzzleChallenge\PuzzleChallenge\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoriesByRole\Default.cshtml.g.cs
+C:\Users\Angel\source\repos\PuzzleChallenge\PuzzleChallenge\obj\Debug\net5.0\Razor\Views\CategoryManagement\AddCategory.cshtml.g.cs

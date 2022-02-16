@@ -1,0 +1,23 @@
+﻿@model List<CategoriesByRoleDto>
+
+@foreach (var item in Model)
+{
+    @if (User.IsInRole(item.RoleId))
+    {
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                @item.RoleId categories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                @foreach (var x in item.Categories)
+                {
+                    <a class="dropdown-item">@x.Name</a>
+                }
+            </div>
+        </li>
+    } else
+    {
+        <div></div>
+    }   
+}

@@ -10,7 +10,11 @@ namespace PuzzleChallenge.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Display(Name = "Category Name")]
         public string Name { get; set; }
+
+        [Display(Name = "Role Authorized")]
         public string RoleAuthorized { get; set; }
     }
 }
